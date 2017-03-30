@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import exampleRoutes from './api/exampleRoutes'; // Replace with real routes
 
 env(__dirname + '/.env');
+mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DB_URI,
   {
     db: process.env.DB,
