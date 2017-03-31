@@ -4,10 +4,12 @@
   "description": "Starter kit for Node, Mongoose, and Express",
   "main": "server.js",
   "scripts": {
-    "start": "npm-run-all --parallel security-check open:src lint:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
     "open:src": "babel-node ./src/server.js",
     "lint": "esw src --color",
     "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --compilers js:babel-core/register --reporter progress \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch",
     "security-check": "nsp check",
     "clean-build": "rimraf ./api server.js",
     "build:server": "babel ./src/server.js --out-file ./server.js",
@@ -52,6 +54,7 @@
     "mocha": "^3.2.0",
     "npm-run-all": "^4.0.2",
     "nsp": "^2.6.3",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "sinon": "^2.1.0"
   }
 }

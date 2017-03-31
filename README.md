@@ -37,4 +37,8 @@ When building the app a new transpiled `server.js` and `api/` folder will be cre
 You can test the api the same way as when running the dev version.
 
 ## Testing
-The system includes Mocha and Chai for building out unit and integration tests. Currently there aren't any set up, and there is no `test` npm script. That's something you can do yourself right now. I will try to get a sample test and test script set up.
+There is an example unit test set up that tests on of the functions in the example controller. It uses mocha and sinon to check that that the getAll method works as expected. There is also a test npm script in the package.json. You can run all unit tests by running:
+
+    npm test
+
+Additionally the `npm start` script now includes a script to run a watch on all js files while the server is running.
