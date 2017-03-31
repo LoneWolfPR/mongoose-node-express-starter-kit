@@ -4,7 +4,9 @@
   "description": "Starter kit for Node, Mongoose, and Express",
   "main": "server.js",
   "scripts": {
-    "start": "babel-node ./src/server.js",
+    "start": "npm-run-all --parallel security-check open:src",
+    "open:src": "babel-node ./src/server.js",
+    "security-check": "nsp check",
     "clean-build": "rimraf ./api server.js",
     "build:server": "babel ./src/server.js --out-file ./server.js",
     "build:api": "babel ./src/api --out-dir ./api",
