@@ -23,6 +23,10 @@ The package includes example routes, models, and controllers that should work if
 
     npm start
 
+Or to run without extra output (only warnings, errors, linting messages, etc.)
+
+    npm start -s
+
 You can now make api calls using a front end application or via an app like Postman or Advanced Rest Client to test your API.
 
 ## Building the application

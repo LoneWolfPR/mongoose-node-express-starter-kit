@@ -4,13 +4,15 @@
   "description": "Starter kit for Node, Mongoose, and Express",
   "main": "server.js",
   "scripts": {
-    "start": "npm-run-all --parallel security-check open:src",
+    "start": "npm-run-all --parallel security-check open:src lint:watch",
     "open:src": "babel-node ./src/server.js",
+    "lint": "esw src --color",
+    "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
     "clean-build": "rimraf ./api server.js",
     "build:server": "babel ./src/server.js --out-file ./server.js",
     "build:api": "babel ./src/api --out-dir ./api",
-    "prebuild": "npm-run-all clean-build",
+    "prebuild": "npm-run-all clean-build lint",
     "build": "npm-run-all build:server build:api",
     "postbuild": "node server.js"
   },
