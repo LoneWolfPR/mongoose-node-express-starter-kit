@@ -14,7 +14,7 @@
     "clean-build": "rimraf ./api server.js",
     "build:server": "babel ./src/server.js --out-file ./server.js",
     "build:api": "babel ./src/api --out-dir ./api",
-    "prebuild": "npm-run-all clean-build lint",
+    "prebuild": "npm-run-all clean-build test lint",
     "build": "npm-run-all build:server build:api",
     "postbuild": "node server.js"
   },
